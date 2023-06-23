@@ -1,0 +1,22 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+}
+
+body {
+    font-size: 1.6rem;
+    margin: 0;
+    height: 100vh;
+}
+
+#root {
+    height: 100%;
+    padding: 2rem;
+}
