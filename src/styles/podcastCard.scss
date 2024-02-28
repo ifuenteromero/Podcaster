@@ -1,0 +1,84 @@
+@import 'mixins';
+@import 'colors';
+@import 'variables';
+@import 'breakpoints';
+
+$card-width: 18rem;
+$card-height: 11.2rem;
+$padding-top: 6rem;
+$padding-x: 1.5rem;
+$max-columns: 4;
+$column-gap: 4rem;
+$row-gap: 5rem;
+$card-font-size: 1.4rem;
+
+.podcast-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($card-width, 1fr));
+    grid-row-gap: $row-gap;
+    grid-column-gap: 2rem;
+    justify-items: center;
+    justify-content: center;
+    padding-top: $row-gap;
+    padding-bottom: $row-gap;
+    @media screen and (min-width: $breakpoint-xs) {
+        grid-template-columns: repeat(2, $card-width);
+        grid-column-gap: 4rem;
+    }
+    @media screen and (min-width: $breakpoint-sm) {
+        grid-template-columns: repeat(3, $card-width);
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        grid-template-columns: repeat(4, $card-width);
+    }
+}
+
+.podcast-card {
+    width: $card-width;
+    box-shadow: $shadow;
+    cursor: pointer;
+    padding: $padding-x;
+    padding-top: $padding-top;
+    border-radius: 6px;
+    position: relative;
+}
+
+.podcast-card__image {
+    position: absolute;
+    height: 7.8rem;
+    left: 50%;
+    top: -3rem;
+    transform: translate(-50%, 0);
+    box-shadow: $shadow;
+    border-radius: 50%;
+}
+
+.podcast-card__info {
+    height: 3.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: $card-font-size;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+.podcast-card__title {
+    font-size: $card-font-size;
+    text-transform: uppercase;
+    color: $black;
+    font-weight: 500;
+    @include text-overflow-ellipsis();
+}
+
+.podcast-card__author {
+    color: $gray-600;
+    font-weight: 300;
+    @include text-overflow-ellipsis();
+    svg {
+        font-size: 1rem;
+        margin-right: 0.5rem;
+    }
+}
