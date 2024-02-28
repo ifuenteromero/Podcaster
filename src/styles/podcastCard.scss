@@ -11,6 +11,7 @@ $max-columns: 4;
 $column-gap: 4rem;
 $row-gap: 5rem;
 $card-font-size: 1.4rem;
+$image-size: 7.8rem;
 
 .podcast-list {
     display: grid;
@@ -46,7 +47,8 @@ $card-font-size: 1.4rem;
 
 .podcast-card__image {
     position: absolute;
-    height: 7.8rem;
+    width: $image-size;
+    height: $image-size;
     left: 50%;
     top: -3rem;
     transform: translate(-50%, 0);
