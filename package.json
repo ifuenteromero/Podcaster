@@ -53,6 +53,10 @@
         ],
         "collectCoverageFrom": [
             "<rootDir>/src/**/*.{js,ts,jsx,tsx}"
-        ]
+        ],
+        "moduleNameMapper": {
+            "\\.(jpg|jpeg|png|gif|webp|svg)$": "identity-obj-proxy",
+            "\\.scss$": "identity-obj-proxy"
+        }
     }
 }
