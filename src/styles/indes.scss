@@ -14,9 +14,15 @@ body {
     font-size: 1.6rem;
     margin: 0;
     height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
 
 #root {
     height: 100%;
-    padding: 2rem;
+    padding: 4rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
 }
