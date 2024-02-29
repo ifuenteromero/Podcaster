@@ -1,16 +1,6 @@
-import PodcastCard from '../components/PodcastCard';
-import usePodCasts from '../hooks/usePodcasts';
+import PodcastList from '../components/PodcastList';
 
 const Home = () => {
-    const { podcasts } = usePodCasts();
-    return (
-        <ul className='podcast-list'>
-            {podcasts.map((podcast) => (
-                <li key={podcast.id}>
-                    <PodcastCard {...podcast} />
-                </li>
-            ))}
-        </ul>
-    );
+    return <PodcastList />;
 };
 export default Home;
