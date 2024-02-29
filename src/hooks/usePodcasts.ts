@@ -31,7 +31,7 @@ interface PodcastResponse {
     }[];
 }
 
-interface FetchPodcastResponse {
+export interface FetchPodcastResponse {
     feed: {
         entry: PodcastResponse[];
     };
