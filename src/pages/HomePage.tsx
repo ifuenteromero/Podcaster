@@ -1,6 +1,6 @@
 import PodcastList from '../components/PodcastList';
 
-const Home = () => {
+const HomePage = () => {
     return <PodcastList />;
 };
-export default Home;
+export default HomePage;
