@@ -1,9 +1,17 @@
 import { render, screen, within } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import PodcastList from '../components/PodcastList';
 import { FetchPodcastResponse } from '../hooks/usePodcasts';
 import endpoints from '../services/endpoints';
-import createServer from '../tests/createServer';
 import { podcastListResponseData } from '../tests/PodcastListResponseData';
+import createServer from '../tests/createServer';
+
+jest.mock('../services/routes', () => {
+    return {
+        podcastDetail: () => '',
+    };
+});
+
 const cardTitle = podcastListResponseData.feed.entry[0]['im:name'].label;
 const cardAuthor = podcastListResponseData.feed.entry[0]['im:artist'].label;
 
@@ -19,7 +27,11 @@ createServer<FetchPodcastResponse>([
 ]);
 
 const renderComponent = async () => {
-    render(<PodcastList />);
+    render(
+        <BrowserRouter>
+            <PodcastList />
+        </BrowserRouter>
+    );
     const items = await screen.findAllByRole('listitem');
     return items;
 };
