@@ -5,7 +5,7 @@ import { CanceledError } from 'axios';
 import imagePlaceholder from '../images/no-image-placeholder.webp';
 
 export interface Podcast {
-    id: number;
+    id: string;
     author: string;
     title: string;
     imgUrl: string;
@@ -38,7 +38,7 @@ export interface FetchPodcastResponse {
 }
 
 const mapPodcastResponseToPodcast = (podcast: PodcastResponse): Podcast => ({
-    id: parseInt(podcast.id.attributes['im:id']),
+    id: podcast.id.attributes['im:id'],
     title: podcast['im:name'].label,
     author: podcast['im:artist'].label,
     imgUrl:
